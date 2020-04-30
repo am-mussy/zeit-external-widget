@@ -33,7 +33,7 @@ define([], function () {
         `
           <div class="widget_settings_block__item_field" id="users">
           <br>
-          <p>Проверка, работы виджета, обновленя и все такое</p>
+          
           <p>ID Группы пользователей:</p>
           <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
           </div>
