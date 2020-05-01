@@ -9,7 +9,7 @@ define([], function () {
       var data = self.render(
         { ref: "/tmpl/controls/checkbox.twig" },
         {
-          arr: m_data,
+          //arr: m_data,
           class_name: "subs_w",
           id: w_code + "_list",
         }
