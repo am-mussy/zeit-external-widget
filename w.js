@@ -13,6 +13,7 @@ define([], function () {
           class_name: "subs_w",
           id: w_code + "_list",
           value: "value",
+          text_class_name: "text_class_name",
           text: "text",
         }
       );
