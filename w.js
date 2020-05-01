@@ -12,6 +12,7 @@ define([], function () {
           //arr: m_data,
           class_name: "subs_w",
           id: w_code + "_list",
+          value: "Hello world",
         }
       );
 
