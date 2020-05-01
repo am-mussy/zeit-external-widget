@@ -9,12 +9,19 @@ define([], function () {
       var data = self.render(
         { ref: "/tmpl/controls/checkbox.twig" },
         {
-          //arr: m_data,
           class_name: "subs_w",
           id: w_code + "_list",
           value: "value",
           text_class_name: "text_class_name",
           text: "text",
+        },
+        { ref: "/tmpl/controls/checkbox.twig" },
+        {
+          class_name: "subs_w",
+          id: w_code + "_list",
+          value: "value2",
+          text_class_name: "text_class_name2",
+          text: "text2",
         }
       );
 
