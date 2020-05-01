@@ -4,21 +4,7 @@ define([], function () {
       console.log("external on save");
     },
     settings: (self) => {
-      w_code = "asdasd";
-      m_data = [
-        {
-          option: "option1",
-          id: "id1",
-        },
-        {
-          option: "option2",
-          id: "id2",
-        },
-        {
-          option: "option3",
-          id: "id3",
-        },
-      ];
+      w_code = "test";
 
       var data = self.render(
         { ref: "/tmpl/controls/checkbox.twig" },
