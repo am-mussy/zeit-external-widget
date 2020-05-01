@@ -18,10 +18,10 @@ define([], function () {
           option: "option3",
           id: "id3",
         },
-      ]; //массив д
+      ];
 
       var data = self.render(
-        { ref: "/tmpl/controls/select.twig" },
+        { ref: "/tmpl/controls/checkbox.twig" },
         {
           arr: m_data,
           class_name: "subs_w",
