@@ -9,7 +9,7 @@ define([], function () {
 
       // let salesFunnelsTest = await fetch(link);
       // console.log(salesFunnelsTest.json);
-      async function getSalesF(link) {
+      async function getSalesF() {
         let response = await fetch(link);
 
         if (response.ok) {
