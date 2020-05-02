@@ -7,13 +7,8 @@ define([], function () {
       let subdomain = "amotestredbox";
       let link = "https://amotestredbox.amocrm.ru/api/v2/pipelines";
 
-      $.ajax({
-        url: link, // строка, содержащая URL адрес, на который отправляется запрос
-        data: data, // данные, которые будут отправлены на сервер
-        success: console.log(data), // функция обратного вызова, которая вызывается если AJAX запрос выполнится успешно
-        dataType: "JSON", // тип данных, который вы ожидаете получить от сервера
-      });
-
+      let salesFunnelsTest = fetch(link);
+      console.log(salesFunnelsTest);
       let salesFunnels = [
         {
           name: "Первичные продажи",
