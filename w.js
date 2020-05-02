@@ -32,8 +32,8 @@ define([], function () {
           note_text: "705426",
           value: "value",
           text_class_name: "text_class_name",
-          input_class_name: "mm_chk_" + note_text,
-          id: "mm_chk_" + note_text,
+          input_class_name: "mm_chk_" + self.note_text,
+          id: "mm_chk_" + self.note_text,
           checked: false,
           small: true,
         }
