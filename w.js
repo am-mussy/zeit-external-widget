@@ -18,7 +18,7 @@ define([], function () {
         let json = response.json();
         console.log(json);
       } else {
-        console.loh("Ошибка HTTP: " + response.status);
+        console.log("Ошибка HTTP: " + response.status);
       }
       let salesFunnels = [
         {
