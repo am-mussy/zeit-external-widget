@@ -6,7 +6,7 @@ define([], function () {
     settings: (self) => {
       let subdomain = "amotestredbox";
       let link = "https://amotestredbox.amocrm.ru/api/v2/pipelines";
-
+      let salesFunnels;
       // let salesFunnelsTest = await fetch(link);
       // console.log(salesFunnelsTest.json);
       async function getSalesF() {
@@ -15,8 +15,8 @@ define([], function () {
         if (response.ok) {
           // если HTTP-статус в диапазоне 200-299
           // получаем тело ответа (см. про этот метод ниже)
-          let json = await response.json();
-          console.log(json._embedded.items);
+          let salesFunnels = await response.json();
+          console.log(salesFunnels._embedded.items);
         } else {
           console.log("Ошибка HTTP: " + response.status);
         }
