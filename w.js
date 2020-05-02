@@ -10,11 +10,12 @@ define([], function () {
       // let salesFunnelsTest = await fetch(link);
       // console.log(salesFunnelsTest.json);
 
-      let response = await fetch(link);
+      let response = fetch(link);
 
-      if (response.ok) { // если HTTP-статус в диапазоне 200-299
+      if (response.ok) {
+        // если HTTP-статус в диапазоне 200-299
         // получаем тело ответа (см. про этот метод ниже)
-        let json = await response.json();
+        let json = response.json();
         console.log(json);
       } else {
         console.loh("Ошибка HTTP: " + response.status);
