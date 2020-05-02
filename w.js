@@ -16,7 +16,7 @@ define([], function () {
           // если HTTP-статус в диапазоне 200-299
           // получаем тело ответа (см. про этот метод ниже)
           let json = await response.json();
-          console.log(json);
+          console.log(json._embedded);
         } else {
           console.log("Ошибка HTTP: " + response.status);
         }
