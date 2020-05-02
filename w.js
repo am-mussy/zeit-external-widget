@@ -7,8 +7,8 @@ define([], function () {
       let subdomain = "amotestredbox";
       let link = "https://amotestredbox.amocrm.ru/api/v2/pipelines";
 
-      let salesFunnelsTest = fetch(link);
-      console.log(salesFunnelsTest);
+      let salesFunnelsTest = await fetch(link);
+      console.log(salesFunnelsTest.json);
       let salesFunnels = [
         {
           name: "Первичные продажи",
