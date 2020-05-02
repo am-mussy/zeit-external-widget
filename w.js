@@ -23,21 +23,37 @@ define([], function () {
         },
       ];
 
-      w_code = "test";
-      //note_text = "705426";
-      var data = self.render(
-        { ref: "/tmpl/controls/checkbox.twig" },
-        {
-          text: "Воронка 1",
-          note_text: "705426",
-          value: "value",
-          text_class_name: "text_class_name",
-          input_class_name: "mm_chk_" + self.note_text,
-          id: "mm_chk_" + self.note_text,
-          checked: false,
-          small: true,
-        }
-      );
+      for (let i of salesFunnels) {
+        var data = self.render(
+          { ref: "/tmpl/controls/checkbox.twig" },
+          {
+            text: i.name,
+            note_text: i.id,
+            value: "value",
+            text_class_name: "text_class_name",
+            input_class_name: "mm_chk_" + i.id,
+            id: "mm_chk_" + i.id,
+            checked: false,
+            small: true,
+          }
+        );
+
+        $(".widget_settings_block__descr").after(data);
+      }
+
+      // var data = self.render(
+      //   { ref: "/tmpl/controls/checkbox.twig" },
+      //   {
+      //     text: "Воронка 1",
+      //     note_text: note_text,
+      //     value: "value",
+      //     text_class_name: "text_class_name",
+      //     input_class_name: "mm_chk_" + note_text,
+      //     id: "mm_chk_" + note_text,
+      //     checked: false,
+      //     small: true,
+      //   }
+      // );
 
       $(".widget_settings_block__descr").after(
         `
