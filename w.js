@@ -38,7 +38,7 @@ define([], function () {
           }
         );
 
-        $(".widget_settings_block__descr").after(data + "<br>");
+        $(".widget_settings_block__descr").append(data + "<br>");
       }
 
       // var data = self.render(
