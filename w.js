@@ -9,14 +9,14 @@ define([], function () {
 
       // let salesFunnelsTest = await fetch(link);
       // console.log(salesFunnelsTest.json);
-      async function getSalesF() {
+      async function getSalesF(link) {
         let response = await fetch(link);
 
         if (response.ok) {
           // если HTTP-статус в диапазоне 200-299
           // получаем тело ответа (см. про этот метод ниже)
           let json = await response.json();
-          console.log(json);
+          console.log(json._embedded.items);
         } else {
           console.log("Ошибка HTTP: " + response.status);
         }
