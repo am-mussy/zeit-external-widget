@@ -9,11 +9,14 @@ define([], function () {
       var data = self.render(
         { ref: "/tmpl/controls/checkbox.twig" },
         {
-          class_name: "subs_w",
-          id: w_code + "_list",
+          text: "Воронка 1",
+          note_text: "705426",
           value: "value",
           text_class_name: "text_class_name",
-          text: "text",
+          input_class_name: "mm_chk_" + note_text,
+          id: "mm_chk_" + note_text,
+          checked: false,
+          small: true,
         }
       );
 
