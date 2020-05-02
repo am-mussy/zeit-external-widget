@@ -15,7 +15,7 @@ define([], function () {
         },
         {
           name: "Условный отказ",
-          id: "00002",
+          id: "00003",
         },
         {
           name: "Холодный прозвон",
@@ -65,7 +65,7 @@ define([], function () {
           </div>
           `
       );
-      $(".widget_settings_block__descr").after(data);
+      //$(".widget_settings_block__descr").after(data);
       $(".inputGroupID").val($("input[name = idgroup]").val());
 
       let inputGroupID;
