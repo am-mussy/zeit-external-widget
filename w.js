@@ -5,15 +5,15 @@ define([], function () {
     },
     settings: (self) => {
       w_code = "test";
-
+      note_text = "705426";
       var data = self.render(
         { ref: "/tmpl/controls/checkbox.twig" },
         {
           text: "Воронка 1",
-          note_text: "705426",
+          note_text: note_text,
           value: "value",
           text_class_name: "text_class_name",
-          input_class_name: "mm_chk_",
+          input_class_name: "mm_chk_" + note_text,
           id: "mm_chk_",
           checked: false,
           small: true,
