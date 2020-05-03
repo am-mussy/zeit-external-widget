@@ -69,14 +69,8 @@ define([], function () {
           <div class="widget_settings_block__item_field" id="users">
           <br>
           
-          <p>ID Группы пользователей:</p>
+          <p>ID Групssssпы пользователей:</p>
           <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
-          </div>
-          <div class="widget_settings_block__item_field" id="users1">
-          <br>
-          
-          <p>ID Группы пользователей:</p>
-          <input name="group" id="group1" class="inputGroupID" type="number" placeholder="id group" />
           </div>
         `
       );
