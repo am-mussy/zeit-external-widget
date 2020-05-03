@@ -16,6 +16,7 @@ define([], function () {
 
       const pipelines = await getSalesF(linkPiplines);
       console.log(pipelines);
+      let arr = [];
 
       for (const key in pipelines) {
         console.log(pipelines[key]);
@@ -32,9 +33,10 @@ define([], function () {
             small: true,
           }
         );
+        arr.append(pipelines[key].name);
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
-
+      console.log(arr);
       let linkGroups = `https://${subdomain}.amocrm.ru/api/v2/account?with=groups`;
 
       async function getGroups(linkGroups) {
@@ -64,16 +66,24 @@ define([], function () {
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
-      // $(".widget_settings_block__descr").after(
-      //   `
-      //     <div class="widget_settings_block__item_field" id="users">
-      //     <br>
+      $(".widget_settings_block__descr").after(
+        `
+          <div class="widget_settings_block__item_field" id="users">
+          <br>
+          
+          <p>ID Группы пользователей:</p>
+          <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
 
-      //     <p>ID Групssssпы пользователей:</p>
-      //     <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
-      //     </div>
-      //   `
-      // );
+          <div class="mm_mainSettings">
+            <div class="mm_piplineSettings">
+              test pip
+            </div>
+            <div class="mm_userSettings">
+               test user
+            </div>
+          </div>
+        `
+      );
       //$(".widget_settings_block__descr").after(data);
       $(".inputGroupID").val($("input[name = idgroup]").val());
 
