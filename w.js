@@ -13,11 +13,10 @@ define([], function () {
           let salesFunnels = await response.json();
           console.log(salesFunnels._embedded.items);
           salesFunnels = salesFunnels._embedded.items;
-          console.log(salesFunnels);
         } else {
           console.log("Ошибка HTTP: " + response.status);
         }
-
+        console.log(salesFunnels);
         return salesFunnels;
       }
 
