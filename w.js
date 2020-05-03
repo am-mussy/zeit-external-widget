@@ -16,7 +16,7 @@ define([], function () {
           console.log("Ошибка HTTP: " + response.status);
         }
 
-        return salesFunnels;
+        return salesFunnels._embedded.items;
       }
 
       const pipelines = await getSalesF(link);
