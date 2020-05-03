@@ -7,7 +7,7 @@ define([], function () {
       let subdomain = "amotestredbox"; //Потом нужно будет либо выводить это в настройки, либо автоматом поцеплять через новую аутентификацию
       let link = `https://${subdomain}.amocrm.ru/api/v2/pipelines`;
       let salesFunnels;
-      async function getSalesF(link) {
+      function getSalesF(link) {
         let response = await fetch(link);
         if (response.ok) {
           let salesFunnels = await response.json();
