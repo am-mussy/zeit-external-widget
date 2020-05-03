@@ -22,12 +22,12 @@ define([], function () {
         var data = self.render(
           { ref: "/tmpl/controls/checkbox.twig" },
           {
-            note_text: key.id,
-            text: key.name,
+            note_text: pipelines[key].id,
+            text: pipelines[key].name,
             value: "value",
             text_class_name: "text_class_name",
-            input_class_name: "mm_chk_" + key.id,
-            id: "mm_chk_" + key.id,
+            input_class_name: "mm_chk_" + pipelines[key].id,
+            id: "mm_chk_" + pipelines[key].id,
             checked: false,
             small: true,
           }
