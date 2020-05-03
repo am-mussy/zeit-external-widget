@@ -40,7 +40,7 @@ define([], function () {
       async function getGroups(linkGroups) {
         let response = await fetch(linkGroups);
         let Groups = await response.json();
-        Groups = Groups._embedded.groups;
+        Groups = Groups._embedded.roups;
         return Groups;
       }
 
@@ -71,16 +71,6 @@ define([], function () {
           
           <p>ID Группы пользователей:</p>
           <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
-          </div>
-
-
-          <div class="mm_mainSettings">
-            <div class="mm_piplineSettings">
-              test pip
-            </div>
-            <div class="mm_userSettings">
-               test user
-            </div>
           </div>
           `
       );
