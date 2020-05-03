@@ -23,9 +23,6 @@ define([], function () {
         console.log(key);
       }
 
-
-
-
       // for (let i of pipelines) {
       //   var data = self.render(
       //     { ref: "/tmpl/controls/checkbox.twig" },
@@ -42,7 +39,7 @@ define([], function () {
       //   );
 
       //   $(".widget_settings_block__descr").append("<br>" + data + "<br>");
-      }
+      // }
 
       // var data = self.render(
       //   { ref: "/tmpl/controls/checkbox.twig" },
