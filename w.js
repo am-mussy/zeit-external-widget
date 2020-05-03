@@ -17,7 +17,7 @@ define([], function () {
       }
 
       const pipelines = await getSalesF(link);
-      console.log(pipelines);
+      console.log(pipelines.3241732.id);
 
       for (const key in pipelines) {
         console.log(key);
