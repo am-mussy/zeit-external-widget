@@ -9,13 +9,9 @@ define([], function () {
       let salesFunnels;
       async function getSalesF(link) {
         let response = await fetch(link);
-        if (response.ok) {
-          let salesFunnels = await response.json();
-          console.log(salesFunnels._embedded.items);
-          salesFunnels = salesFunnels._embedded.items;
-        } else {
-          console.log("Ошибка HTTP: " + response.status);
-        }
+        let salesFunnels = await response.json();
+        console.log(salesFunnels);
+        salesFunnels = salesFunnels._embedded.items;
         console.log(salesFunnels);
         return salesFunnels;
       }
