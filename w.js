@@ -17,26 +17,31 @@ define([], function () {
       }
 
       const pipelines = await getSalesF(link);
-      console.log(pipelines.Object);
-      console.log(pipelines[0]);
       console.log(pipelines);
 
-      for (let i of pipelines) {
-        var data = self.render(
-          { ref: "/tmpl/controls/checkbox.twig" },
-          {
-            // note_text: i.id,
-            // text: i.name,
-            // value: "value",
-            // text_class_name: "text_class_name",
-            // input_class_name: "mm_chk_" + i.id,
-            // id: "mm_chk_" + i.id,
-            // checked: false,
-            // small: true,
-          }
-        );
-        console.log(i);
-        $(".widget_settings_block__descr").append("<br>" + data + "<br>");
+      for (const key in pipelines) {
+        console.log(key);
+      }
+
+
+
+
+      // for (let i of pipelines) {
+      //   var data = self.render(
+      //     { ref: "/tmpl/controls/checkbox.twig" },
+      //     {
+      //       note_text: i.id,
+      //       text: i.name,
+      //       value: "value",
+      //       text_class_name: "text_class_name",
+      //       input_class_name: "mm_chk_" + i.id,
+      //       id: "mm_chk_" + i.id,
+      //       checked: false,
+      //       small: true,
+      //     }
+      //   );
+
+      //   $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
       // var data = self.render(
