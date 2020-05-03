@@ -20,6 +20,8 @@ define([], function () {
       console.log(pipelines);
 
       for (const key in pipelines) {
+        console.log(pipelines);
+        console.log(pipelines[key]);
         console.log(pipelines.key);
         var data = self.render(
           { ref: "/tmpl/controls/checkbox.twig" },
