@@ -66,6 +66,15 @@ define([], function () {
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
+      var data = self.render(
+        { ref: "/tmpl/controls/multiselect.twig" },
+        {
+          values: arr,
+          name: milti,
+        }
+      );
+      $(".widget_settings_block__descr").append("<br>" + data + "<br>");
+
       $(".widget_settings_block__descr").after(
         `
           <div class="widget_settings_block__item_field" id="users">
