@@ -5,16 +5,16 @@ define([], function () {
     },
     settings: async (self) => {
       let subdomain = "amotestredbox"; //Потом нужно будет либо выводить это в настройки, либо автоматом поцеплять через новую аутентификацию
-      let link = `https://${subdomain}.amocrm.ru/api/v2/pipelines`;
+      let linkPiplines = `https://${subdomain}.amocrm.ru/api/v2/pipelines`;
       let salesFunnels;
-      async function getSalesF(link) {
-        let response = await fetch(link);
+      async function getSalesF(linkPiplines) {
+        let response = await fetch(linkPiplines);
         let salesFunnels = await response.json();
         salesFunnels = salesFunnels._embedded.items;
         return salesFunnels;
       }
 
-      const pipelines = await getSalesF(link);
+      const pipelines = await getSalesF(linkPiplines);
       console.log(pipelines);
 
       for (const key in pipelines) {
@@ -32,41 +32,37 @@ define([], function () {
             small: true,
           }
         );
-
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
-      // for (let i of pipelines) {
-      //   var data = self.render(
-      //     { ref: "/tmpl/controls/checkbox.twig" },
-      //     {
-      //       note_text: i.id,
-      //       text: i.name,
-      //       value: "value",
-      //       text_class_name: "text_class_name",
-      //       input_class_name: "mm_chk_" + i.id,
-      //       id: "mm_chk_" + i.id,
-      //       checked: false,
-      //       small: true,
-      //     }
-      //   );
+      let linkUsers = `https://${subdomain}.amocrm.ru/api/v2/account?with=users`;
 
-      //   $(".widget_settings_block__descr").append("<br>" + data + "<br>");
-      // }
+      async function getUsers(linkUsers) {
+        let response = await fetch(linkUsers);
+        let Users = await response.json();
+        Users = Users._embedded.users;
+        return Users;
+      }
 
-      // var data = self.render(
-      //   { ref: "/tmpl/controls/checkbox.twig" },
-      //   {
-      //     text: "Воронка 1",
-      //     note_text: note_text,
-      //     value: "value",
-      //     text_class_name: "text_class_name",
-      //     input_class_name: "mm_chk_" + note_text,
-      //     id: "mm_chk_" + note_text,
-      //     checked: false,
-      //     small: true,
-      //   }
-      // );
+      const users = await getUsers(linkUsers);
+
+      for (const key in pipelines) {
+        console.log(pipelines[key]);
+        var data = self.render(
+          { ref: "/tmpl/controls/checkbox.twig" },
+          {
+            note_text: pipelines[key].id,
+            text: pipelines[key].name,
+            value: "value",
+            text_class_name: "text_class_name",
+            input_class_name: "mm_chk_" + pipelines[key].id,
+            id: "mm_chk_" + pipelines[key].id,
+            checked: false,
+            small: true,
+          }
+        );
+        $(".widget_settings_block__descr").append("<br>" + data + "<br>");
+      }
 
       $(".widget_settings_block__descr").after(
         `
