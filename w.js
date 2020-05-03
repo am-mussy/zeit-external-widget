@@ -21,7 +21,7 @@ define([], function () {
         return salesFunnels;
       }
 
-      const pipelines = sgetSalesF(link);
+      const pipelines = getSalesF(link);
 
       for (let i of pipelines) {
         var data = self.render(
