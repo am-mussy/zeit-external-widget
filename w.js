@@ -22,7 +22,7 @@ define([], function () {
       }
 
       const pipelines = getSalesF(link);
-      console.log(pipelines[0]);
+      console.log(typeof pipelines);
 
       for (let i of pipelines) {
         var data = self.render(
