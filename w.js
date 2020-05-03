@@ -16,7 +16,9 @@ define([], function () {
         return salesFunnels;
       }
 
-      const pipelines = getSalesF(link);
+      const pipelines = await getSalesF(link);
+      console.log(pipelines.Object);
+      console.log(pipelines[0]);
       console.log(pipelines);
 
       for (let i of pipelines) {
