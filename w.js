@@ -35,28 +35,28 @@ define([], function () {
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
-      let linkUsers = `https://${subdomain}.amocrm.ru/api/v2/account?with=users`;
+      let linkGroups = `https://${subdomain}.amocrm.ru/api/v2/account?with=groups`;
 
-      async function getUsers(linkUsers) {
-        let response = await fetch(linkUsers);
-        let Users = await response.json();
-        Users = Users._embedded.users;
-        return Users;
+      async function getGroups(linkGroups) {
+        let response = await fetch(linkGroups);
+        let Groups = await response.json();
+        Groups = Groups._embedded.groups;
+        return Groups;
       }
 
-      const users = await getUsers(linkUsers);
+      const Groups = await getGroups(linkGroups);
 
-      for (const key in users) {
-        console.log(users[key]);
+      for (const key in Groups) {
+        console.log(Groups[key]);
         var data = self.render(
           { ref: "/tmpl/controls/checkbox.twig" },
           {
-            note_text: users[key].id,
-            text: users[key].name,
+            note_text: Groups[key].id,
+            text: Groups[key].name,
             value: "value",
             text_class_name: "text_class_name",
-            input_class_name: "mm_chk_" + users[key].id,
-            id: "mm_chk_" + users[key].id,
+            input_class_name: "mm_chk_" + Groups[key].id,
+            id: "mm_chk_" + Groups[key].id,
             checked: false,
             small: true,
           }
