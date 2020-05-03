@@ -46,17 +46,17 @@ define([], function () {
 
       const users = await getUsers(linkUsers);
 
-      for (const key in pipelines) {
-        console.log(pipelines[key]);
+      for (const key in users) {
+        console.log(users[key]);
         var data = self.render(
           { ref: "/tmpl/controls/checkbox.twig" },
           {
-            note_text: pipelines[key].id,
-            text: pipelines[key].name,
+            note_text: users[key].id,
+            text: users[key].name,
             value: "value",
             text_class_name: "text_class_name",
-            input_class_name: "mm_chk_" + pipelines[key].id,
-            id: "mm_chk_" + pipelines[key].id,
+            input_class_name: "mm_chk_" + users[key].id,
+            id: "mm_chk_" + users[key].id,
             checked: false,
             small: true,
           }
