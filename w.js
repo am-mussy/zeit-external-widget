@@ -70,7 +70,7 @@ define([], function () {
         { ref: "/tmpl/controls/multiselect.twig" },
         {
           values: arr,
-          name: "mislti",
+          name: "mis2lti",
         }
       );
       $(".widget_settings_block__descr").append("<br>" + data + "<br>");
