@@ -21,6 +21,21 @@ define([], function () {
 
       for (const key in pipelines) {
         console.log(key);
+        var data = self.render(
+          { ref: "/tmpl/controls/checkbox.twig" },
+          {
+            note_text: key.id,
+            text: key.name,
+            value: "value",
+            text_class_name: "text_class_name",
+            input_class_name: "mm_chk_" + key.id,
+            id: "mm_chk_" + key.id,
+            checked: false,
+            small: true,
+          }
+        );
+
+        $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
       // for (let i of pipelines) {
