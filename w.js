@@ -64,16 +64,16 @@ define([], function () {
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
-      $(".widget_settings_block__descr").after(
-        `
-          <div class="widget_settings_block__item_field" id="users">
-          <br>
-          
-          <p>ID Групssssпы пользователей:</p>
-          <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
-          </div>
-        `
-      );
+      // $(".widget_settings_block__descr").after(
+      //   `
+      //     <div class="widget_settings_block__item_field" id="users">
+      //     <br>
+
+      //     <p>ID Групssssпы пользователей:</p>
+      //     <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
+      //     </div>
+      //   `
+      // );
       //$(".widget_settings_block__descr").after(data);
       $(".inputGroupID").val($("input[name = idgroup]").val());
 
