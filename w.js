@@ -72,7 +72,13 @@ define([], function () {
           <p>ID Группы пользователей:</p>
           <input name="group" id="group" class="inputGroupID" type="number" placeholder="id group" />
           </div>
-          `
+          <div class="widget_settings_block__item_field" id="users1">
+          <br>
+          
+          <p>ID Группы пользователей:</p>
+          <input name="group" id="group1" class="inputGroupID" type="number" placeholder="id group" />
+          </div>
+        `
       );
       //$(".widget_settings_block__descr").after(data);
       $(".inputGroupID").val($("input[name = idgroup]").val());
