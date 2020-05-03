@@ -10,9 +10,7 @@ define([], function () {
       async function getSalesF(link) {
         let response = await fetch(link);
         let salesFunnels = await response.json();
-        console.log(salesFunnels);
         salesFunnels = salesFunnels._embedded.items;
-        console.log(salesFunnels);
         return salesFunnels;
       }
 
@@ -20,9 +18,7 @@ define([], function () {
       console.log(pipelines);
 
       for (const key in pipelines) {
-        console.log(pipelines);
         console.log(pipelines[key]);
-        console.log(pipelines.key);
         var data = self.render(
           { ref: "/tmpl/controls/checkbox.twig" },
           {
