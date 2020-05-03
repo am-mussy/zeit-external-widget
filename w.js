@@ -12,11 +12,13 @@ define([], function () {
         if (response.ok) {
           let salesFunnels = await response.json();
           console.log(salesFunnels._embedded.items);
+          salesFunnels = salesFunnels._embedded.items;
+          console.log(salesFunnels);
         } else {
           console.log("Ошибка HTTP: " + response.status);
         }
 
-        return salesFunnels._embedded.items;
+        return salesFunnels;
       }
 
       const pipelines = await getSalesF(link);
