@@ -33,7 +33,7 @@ define([], function () {
             small: true,
           }
         );
-        arr.append(pipelines[key].name);
+        arr.push(pipelines[key].name);
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
       console.log(arr);
