@@ -3,70 +3,39 @@ define([], function () {
     onSave: function () {
       console.log("external on save");
     },
-    settings: (self) => {
-      let subdomain = "amotestredbox";
-      let link = "https://amotestredbox.amocrm.ru/api/v2/pipelines";
+    settings: async (self) => {
+      let subdomain = "amotestredbox"; //Потом нужно будет либо выводить это в настройки, либо автоматом поцеплять через новую аутентификацию
+      let link = `https://${subdomain}.amocrm.ru/api/v2/pipelines`;
       let salesFunnels;
-      // let salesFunnelsTest = await fetch(link);
-      // console.log(salesFunnelsTest.json);
-      async function getSalesF() {
+      async function getSalesF(link) {
         let response = await fetch(link);
-
         if (response.ok) {
-          // если HTTP-статус в диапазоне 200-299
-          // получаем тело ответа (см. про этот метод ниже)
           let salesFunnels = await response.json();
           console.log(salesFunnels._embedded.items);
         } else {
           console.log("Ошибка HTTP: " + response.status);
         }
+
+        return salesFunnels;
       }
 
-      getSalesF();
+      const pipelines = await getSalesF(link);
 
-      // let response = await fetch(link);
-
-      // if (response.ok) { // если HTTP-статус в диапазоне 200-299
-      //   // получаем тело ответа (см. про этот метод ниже)
-      //   let json = await response.json();
-      //   console.log(json);
-      // } else {
-      //   console.log("Ошибка HTTP: " + response.status);
-      // }
-      // let salesFunnels = [
-      //   {
-      //     name: "Первичные продажи",
-      //     id: "00001",
-      //   },
-      //   {
-      //     name: "Повторные продажи",
-      //     id: "00002",
-      //   },
-      //   {
-      //     name: "Условный отказ",
-      //     id: "00003",
-      //   },
-      //   {
-      //     name: "Холодный прозвон",
-      //     id: "00004",
-      //   },
-      // ];
-
-      for (let i of salesFunnels) {
+      for (let i of pipelines) {
         var data = self.render(
           { ref: "/tmpl/controls/checkbox.twig" },
           {
-            text: i.name,
-            note_text: i.id,
-            value: "value",
-            text_class_name: "text_class_name",
-            input_class_name: "mm_chk_" + i.id,
-            id: "mm_chk_" + i.id,
-            checked: false,
-            small: true,
+            // note_text: i.id,
+            // text: i.name,
+            // value: "value",
+            // text_class_name: "text_class_name",
+            // input_class_name: "mm_chk_" + i.id,
+            // id: "mm_chk_" + i.id,
+            // checked: false,
+            // small: true,
           }
         );
-
+        console.log(i);
         $(".widget_settings_block__descr").append("<br>" + data + "<br>");
       }
 
